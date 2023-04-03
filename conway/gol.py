@@ -94,5 +94,6 @@ class GameOfLife:
         self.create_grid()
 
 
-game = GameOfLife()
-game.window.mainloop()
+if __name__ == "__main__":
+    game = GameOfLife()
+    game.window.mainloop()

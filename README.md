@@ -1,1 +1,1 @@
-# peers_conway-s_game_of_life
+# Peer Conways Game Of Life Implementation
