@@ -16,6 +16,9 @@ class GameOfLife:
         self.create_grid()
 
     def create_widgets(self) -> None:
+        # write docstrings for this method
+        """ Creates the widgets for the game of life
+        """
         self.canvas = tk.Canvas(self.window, width=self.grid_width * self.cell_size, height=self.grid_height * self.cell_size,
                                 borderwidth=1, highlightthickness=1, bg="gray")
         self.canvas.pack(side="top", fill="both", expand="true")
@@ -28,14 +31,23 @@ class GameOfLife:
                   command=self.reset_game).pack(side="left")
 
     def get_grid(self) -> list[list[int]]:
+        """ Creates a random grid
+
+        Returns:
+            list[list[int]]: A random grid
+        """
         return [[random.randint(0, 1) for _ in range(self.grid_width)]  # for each column in the row
                 for _ in range(self.grid_height)]  # for each row
 
     def create_grid(self) -> None:
+        """ Creates the grid
+        """
         self.grid = self.get_grid()  # get a random grid
         self.draw_grid()  # draw the grid
 
     def draw_grid(self) -> None:
+        """ Draws the grid
+        """
         self.canvas.delete("all")  # clear the canvas
         for i in range(self.grid_height):  # for each row
             for j in range(self.grid_width):  # for each column in the row
@@ -51,6 +63,15 @@ class GameOfLife:
                         x1_cord, y1_cord, x2_cord, y2_cord, fill="gray", outline="")
 
     def get_neighbors(self, i: int, j: int) -> int:
+        """ Gets the number of neighbors
+
+        Args:
+            i (int): row
+            j (int): column
+
+        Returns:
+            int: number of neighbors
+        """
         neighbors = 0  # number of neighbors
         for x in [-1, 0, 1]:  # for each neighbor in the row
             for y in [-1, 0, 1]:  # for each neighbor in the column
@@ -63,6 +84,8 @@ class GameOfLife:
         return neighbors
 
     def update_grid(self) -> None:
+        """ Updates the grid
+        """
         if self.running == False:  # if the game is not running
             return
         new_grid = self.get_grid()  # create a new grid
@@ -86,13 +109,19 @@ class GameOfLife:
         self.window.after(100, self.update_grid)
 
     def start_game(self) -> None:
+        """ Starts the game
+        """
         self.running = True
         self.update_grid()
 
     def stop_game(self) -> None:
+        """ Stops the game
+        """
         self.running = False
 
     def reset_game(self) -> None:
+        """ Resets the game
+        """
         self.stop_game()
         self.create_grid()
 
