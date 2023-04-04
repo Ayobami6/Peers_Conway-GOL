@@ -1,14 +1,17 @@
 import tkinter as tk
 import random
+from dataclasses import dataclass
 
 
+@dataclass
 class GameOfLife:
-    def __init__(self) -> None:
-        self.window = tk.Tk()
-        self.window.title("Peers Conway's Game of Life")
-        self.grid_height = 50
-        self.grid_width = 50
-        self.cell_size = 10
+    window: object = tk.Tk()
+    window.title("Peers Conway's Game of Life")
+    grid_height: int = 50
+    grid_width: int = 50
+    cell_size: int = 10
+
+    def __post_init__(self):
         self.create_widgets()
         self.create_grid()
 
