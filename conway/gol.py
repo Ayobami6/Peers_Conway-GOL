@@ -16,7 +16,6 @@ class GameOfLife:
         self.create_grid()
 
     def create_widgets(self) -> None:
-        # write docstrings for this method
         """ Creates the widgets for the game of life
         """
         self.canvas = tk.Canvas(self.window, width=self.grid_width * self.cell_size, height=self.grid_height * self.cell_size,
