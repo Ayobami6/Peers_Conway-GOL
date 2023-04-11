@@ -12,7 +12,7 @@ def test_grid_size():
 
 def test_grid_values():
     """Tests the grid values are 0 or 1
-    """    
+    """
     game = GameOfLife()
     for row in game.grid:
         for cell in row:
@@ -21,7 +21,7 @@ def test_grid_values():
 
 def test_create_grid():
     """Tests the grid values are 0 or 1
-    """    
+    """
     game = GameOfLife()
     game.create_grid()
     for row in game.grid:
@@ -31,7 +31,7 @@ def test_create_grid():
 
 def test_create_widgets():
     """Tests the widgets are created
-    """    
+    """
     game = GameOfLife()
     game.create_widgets()
     assert game.canvas
@@ -42,7 +42,7 @@ def test_create_widgets():
 
 def test_draw_grid():
     """Tests the grid is drawn
-    """    
+    """
     game = GameOfLife()
     game.draw_grid()
     assert game.canvas
@@ -50,7 +50,7 @@ def test_draw_grid():
 
 def test_update_grid():
     """Tests the grid is updated
-    """    
+    """
     game = GameOfLife()
     game.start_game()
     game.update_grid()
@@ -58,9 +58,9 @@ def test_update_grid():
 
 
 def test_get_neighbors():
-    """Tests the number of neighbors, since it's random, 
+    """Tests the number of neighbors, since it's random,
     it can be 1, 2, 3, 4 or 5 number of live neighbors
-    """    
+    """
     game = GameOfLife()
     game.grid[0][0] = 1
     assert game.get_neighbors(0, 0) == 1 or 2 or 3

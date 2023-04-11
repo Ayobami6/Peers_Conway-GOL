@@ -56,10 +56,10 @@ class GameOfLife:
                 y2_cord = y1_cord + self.cell_size
                 if self.grid[i][j] == 1:  # if cell is alive
                     self.canvas.create_rectangle(
-                        x1_cord, y1_cord, x2_cord, y2_cord, fill="yellow", outline="")
+                        x1_cord, y1_cord, x2_cord, y2_cord, fill="yellow", outline="black")
                 else:  # if cell is dead
                     self.canvas.create_rectangle(
-                        x1_cord, y1_cord, x2_cord, y2_cord, fill="gray", outline="")
+                        x1_cord, y1_cord, x2_cord, y2_cord, fill="gray", outline="black")
 
     def get_neighbors(self, i: int, j: int) -> int:
         """ Gets the number of neighbors
